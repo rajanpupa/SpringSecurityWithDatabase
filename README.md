@@ -12,3 +12,17 @@ The steps for the creation of this project are very simple
 * Add the authentication manager as well, (for this particular project, the authentication manager is hard coded)
 * Add the maven plugin jetty as well, if you want to run your project locally for debugging(pom.xml)
 * Run your application with goal (jetty:run)
+
+## NOTE
+. For Spring to load all the files associated with it, you have to list them all in the web.xml file under following tag
+```
+<!-- Spring context files to be loaded -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/dispatcher-servlet.xml,
+            /WEB-INF/spring/spring-security.xml,
+            /WEB-INF/spring/spring-module.xml
+        </param-value>
+    </context-param>
+```
