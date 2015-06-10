@@ -29,3 +29,11 @@ To locally run the project
         </param-value>
     </context-param>
 ```
+## Big Concept
+. In normal java EE applications, there are two terms, 
+* Servlet Config
+* Servlet Context.
+
+Ther first one is the context per servlet in the web application. That means one servlet config is associated to a particular servlet and cannot be accessed by another servlet.
+
+The Servlet context is the context per application(more like application context). The data in the context-param are available to all the servlets configured in the application. They are available in the init method of the Listener that we configure in the web.xml, from where we add them to the context.
